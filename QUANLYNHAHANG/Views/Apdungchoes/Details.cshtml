@@ -1,0 +1,26 @@
+﻿@model QUANLYNHAHANG.Models.Apdungcho
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Apdungcho</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tên_loại_áp_dụng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tên_loại_áp_dụng)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Áp_dụng_cho }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

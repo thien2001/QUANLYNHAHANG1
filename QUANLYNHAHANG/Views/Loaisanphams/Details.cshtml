@@ -1,0 +1,26 @@
+﻿@model QUANLYNHAHANG.Models.Loaisanpham
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Loaisanpham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tên_loại_SP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tên_loại_SP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Mã_loại_SP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
