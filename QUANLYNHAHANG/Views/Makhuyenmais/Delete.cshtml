@@ -1,0 +1,80 @@
+﻿@model QUANLYNHAHANG.Models.Makhuyenmai
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Makhuyenmai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tên_KM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tên_KM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mức_giảm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mức_giảm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trị_giá_từ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trị_giá_từ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thời_gian_bắt_đầu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thời_gian_bắt_đầu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thời_gian_kết_thúc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thời_gian_kết_thúc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apdungcho.Tên_loại_áp_dụng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apdungcho.Tên_loại_áp_dụng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loaimakhuyenmai.Tên_loại_khuyến_mãi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loaimakhuyenmai.Tên_loại_khuyến_mãi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
