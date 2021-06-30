@@ -1,4 +1,4 @@
-@using QUANLYNHAHANG.Models
+ï»¿@using QUANLYNHAHANG.Models
 @model QUANLYNHAHANG.Models.Donhang
 
 @{
@@ -45,19 +45,19 @@
                     <div class="col-md-6 form-group p_star">
                         @Html.DropDownList("M?_TT", null, htmlAttributes: new { @class = "form-control", required = true, style = "padding-left:70px" } )
                         @Html.ValidationMessageFor(model => model.M?_TT, "", new { @class = "text-danger" })
-                        <span class="placeholder" data-placeholder="Tr?ng thái "></span>
+                        <span class="placeholder" data-placeholder="Tr?ng thï¿½i "></span>
                     </div>
 
                     <div class="col-md-6 form-group p_star">
-                        @Html.EditorFor(model => model.SÐT, new { htmlAttributes = new { @class = "form-control", required = true, style = "padding-left:50px" } })
-                        @Html.ValidationMessageFor(model => model.SÐT, "", new { @class = "text-danger" })
-                        <span class="placeholder" data-placeholder="SÐT"></span>
+                        @Html.EditorFor(model => model.Sï¿½T, new { htmlAttributes = new { @class = "form-control", required = true, style = "padding-left:50px" } })
+                        @Html.ValidationMessageFor(model => model.Sï¿½T, "", new { @class = "text-danger" })
+                        <span class="placeholder" data-placeholder="Sï¿½T"></span>
                         <div class="col-md-10">
                         </div>
                     </div>
                     <div class="col-md-6 form-group p_star">
-                        @Html.EditorFor(model => model.Ð?a_ch?_ngý?i_nh?n, new { htmlAttributes = new { @class = "form-control", required = true, style = "padding-left:70px" } })
-                        @Html.ValidationMessageFor(model => model.Ð?a_ch?_ngý?i_nh?n, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.ï¿½?a_ch?_ngï¿½?i_nh?n, new { htmlAttributes = new { @class = "form-control", required = true, style = "padding-left:70px" } })
+                        @Html.ValidationMessageFor(model => model.ï¿½?a_ch?_ngï¿½?i_nh?n, "", new { @class = "text-danger" })
                         <span class="placeholder" data-placeholder="Address"></span>
                     </div>
                     <div class="col-md-6 form-group p_star">
@@ -68,7 +68,7 @@
 
                     <div class="creat_account">
                         <input type="checkbox" id="f-option4" name="selector" required>
-                        <label for="f-option4">I’ve read and accept the </label>
+                        <label for="f-option4">Iï¿½ve read and accept the </label>
                         <a href="#">terms &amp; conditions*</a>
                     </div>
                     <div class="form-group">
@@ -92,9 +92,9 @@
                             {
                             <li>
                                 <a href="@Url.Action("Details","Sanphams", new {item.Sanpham.M?_SP })">
-                                    @item.Sanpham.Tên_món_ãn
-                                    <span class="middle">x @item.S?_lý?ng</span>
-                                    <span class="last">@(item.Sanpham.Giá_ti?n * item.S?_lý?ng)ð</span>
+                                    @item.Sanpham.Tï¿½n_mï¿½n_ï¿½n
+                                    <span class="middle">x @item.S?_lï¿½?ng</span>
+                                    <span class="last">@(item.Sanpham.Giï¿½_ti?n * item.S?_lï¿½?ng)ï¿½</span>
                                 </a>
                             </li>
                             }
@@ -104,7 +104,7 @@
                             <li>
                                 <a href="#">
                                     Total
-                                    <span>@(Cart.Sum(c => c.Sanpham.Giá_ti?n * c.S?_lý?ng).ToString("N0"))ð</span>
+                                    <span>@(Cart.Sum(c => c.Sanpham.Giï¿½_ti?n * c.S?_lï¿½?ng).ToString("N0"))ï¿½</span>
                                 </a>
                             </li>
                         </ul>
