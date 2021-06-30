@@ -10,12 +10,20 @@ using QUANLYNHAHANG.Models;
 
 namespace QUANLYNHAHANG.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SanphamsController : Controller
     {
         private CT25Team111Entities db = new CT25Team111Entities();
 
         // GET: Sanphams
         public ActionResult Index()
+        {
+            var sanphams = db.Sanphams.Include(s => s.Loaisanpham);
+            return View(sanphams.ToList());
+        }
+        [AllowAnonymous]
+        // cho khách hàng
+        public ActionResult Index2()
         {
             var sanphams = db.Sanphams.Include(s => s.Loaisanpham);
             return View(sanphams.ToList());
