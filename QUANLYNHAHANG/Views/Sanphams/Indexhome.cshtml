@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<QUANLYNHAHANG.Models.Sanpham>
-@{
-    ViewBag.Title = "Home Page";
-}
+@{ ViewBag.Title = "Home index"; }
 
 <!-- services -->
 <div class="services" id="services">
@@ -124,22 +122,22 @@
 <!-- //services -->
 <!-- menu-section -->
 <div class="menu-w3l" id="menu">
-    <h3> class=@(ViewBag.Keyword!=null?"Search Results":"All Products")</h3>
+    <h3>@(ViewBag.Keyword!=null?"Search Results":"All Products")</h3>
     <ul id="flexiselDemo1">
         @foreach (var sanpham in Model)
         {
-            <li>
-                <div class="w3layouts_banner_bottom_left">
-                    <a href="@Url.Action("Details", new {id=sanpham.Mã_SP })">
-                        <img src="@Url.Action("Picture" , "Sanphams", new { sanpham.Mã_SP })" width="300px" height="220px" alt=" demo picture " />
-                    </a>
-                    <h4>
-                        <a href="@Url.Action("Details", new {id=sanpham.Mã_SP })">@sanpham.Tên_món_ăn</a>
-                        --- <span>@sanpham.Giá_tiền.ToString("N0") vnđ</span>
-                    </h4>
+<li>
+    <div class="w3layouts_banner_bottom_left">
+        <a href="@Url.Action("Details", new {id=sanpham.Mã_SP })">
+            <img src="@Url.Action("Picture" , "Sanphams", new { sanpham.Mã_SP })" width="300px" height="220px" alt=" demo picture " />
+        </a>
+        <h4>
+            <a href="@Url.Action("Details", new {id=sanpham.Mã_SP })">@sanpham.Tên_món_ăn</a>
+            --- <span>@sanpham.Giá_tiền.ToString("N0") vnđ</span>
+        </h4>
 
-                </div>
-            </li>
+    </div>
+</li>
 }
 
     </ul>
