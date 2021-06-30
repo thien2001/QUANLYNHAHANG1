@@ -42,15 +42,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="col-md-6 col-sm-4 col-xs-4 logo">
                             <h1><a href="index.html">Glorious<span>Restaurant</span></a></h1>
                         </div>
-                        <div class="col-md-6 col-sm-8 col-xs-8 w3_menu">
-                            <div class="col-md-2 col-sm-2 col-xs-2 top-nav-text">
+                        <div class="col-md-12 col-sm-8 col-xs-8 w3_menu">
+                            <div class="col-md-1 col-sm-2 col-xs-2 top-nav-text">
                                 <a class="page-scroll" href="@Url.Action("Index2", "Sanphams")">Home</a>
                             </div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 top-nav-text">
+                            <div class="col-md-1 col-sm-2 col-xs-2 top-nav-text">
                                 <a class="page-scroll" href="@Url.Action("About", "Home")">About</a>
                             </div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 top-nav-text">
+                            <div class="col-md-1 col-sm-2 col-xs-2 top-nav-text">
                                 <a class="page-scroll" href="@Url.Action("Contact", "Home")">Contact</a>
+                            </div>
+                            <div class="col-md-1 col-sm-2 col-xs-2 top-nav-text">
+                                <a class="page-scroll" href="@Url.Action("Index", "Sanphams")">Product</a>
+                            </div>
+                            <div class="col-md-1 col-sm-2 col-xs-2 top-nav-text">
+                                <a class="page-scroll" href="@Url.Action("Index", "Donhang1")">Bill</a>
+                            </div>
+                            <div class="col-md-1 col-sm-2 col-xs-2 top-nav-text">
+                                <a class="page-scroll" href="@Url.Action("Index", "Makhuyenmais")">Voucher</a>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-2 top-nav-text">
                                 @if (Request.IsAuthenticated)
@@ -58,7 +67,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                                     {
                                         @Html.AntiForgeryToken()
-
+                                        @Html.ActionLink("My Account ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                                         <a class="btn header-btn" href="javascript:document.getElementById('logoutForm').submit()">Log out</a> }
                                 }
                                 else
@@ -95,18 +104,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <!--Slider-->
                     <div class="col-md-7 callbacks_container">
                         <ul class="rslides" id="slider3">
-                            <li>
-                                <div class="slider-info">
-                                    <h3>Fresh Food Restaurant</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-info">
-                                    <h3>Welcome To Restaurant</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </li>
+                            
+                            
                             <li>
                                 <div class="slider-info">
                                     <h3>Perfect Match For Your Restaurant</h3>

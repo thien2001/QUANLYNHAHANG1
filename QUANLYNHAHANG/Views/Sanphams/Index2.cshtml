@@ -124,7 +124,7 @@
 <!-- //services -->
 <!-- menu-section -->
 <div class="menu-w3l" id="menu">
-    <h3> class=@(ViewBag.Keyword!=null?"Search Results":"All Products")</h3>
+    <h3> @(ViewBag.Keyword!=null?"Search Results":"All Products")</h3>
     <ul id="flexiselDemo1">
         @foreach (var sanpham in Model)
         {

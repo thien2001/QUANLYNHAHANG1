@@ -16,20 +16,21 @@ namespace QUANLYNHAHANG.Controllers
 
         private List<Chitietdonhang> ShoppingCart = null;
 
-        public ShoppingCartController()
+        private void GetShoppingCart()
         {
-            var session = System.Web.HttpContext.Current.Session;
-            if (session["ShoppingCart"] != null)
-                ShoppingCart = session["ShoppingCart"] as List<Chitietdonhang>;
+
+            if (Session["ShoppingCart"] != null)
+                ShoppingCart = Session["ShoppingCart"] as List<Chitietdonhang>;
             else
             {
                 ShoppingCart = new List<Chitietdonhang>();
-                session["ShoppingCart"] = ShoppingCart;
+                Session["ShoppingCart"] = ShoppingCart;
             }
         }
         // GET: ShoppingCart
         public ActionResult Index()
         {
+            GetShoppingCart();
             var hashtable = new Hashtable();
             foreach (var Chitietdonhang in ShoppingCart)
             {
@@ -51,6 +52,7 @@ namespace QUANLYNHAHANG.Controllers
         [HttpPost]
         public ActionResult Create(string Mã_SP, int số_lượng)
         {
+            GetShoppingCart();
             var sanpham = db.Sanphams.Find(Mã_SP);
             ShoppingCart.Add(new Chitietdonhang
             {
@@ -64,35 +66,34 @@ namespace QUANLYNHAHANG.Controllers
         }
 
         // GET: ShoppingCart/Edit/5
-        public ActionResult Edit(int? id)
+        [HttpPost]
+        public ActionResult Edit(string [] Mã_SP,int [] số_lượng)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Chitietdonhang chitietdonhang = db.Chitietdonhangs.Find(id);
-            if (chitietdonhang == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.Mã_ĐH = new SelectList(db.Donhang1, "Mã_ĐH", "Email", chitietdonhang.Mã_ĐH);
-            ViewBag.Mã_SP = new SelectList(db.Sanphams, "Mã_SP", "Mã_loại_SP", chitietdonhang.Mã_SP);
-            return View(chitietdonhang);
+            GetShoppingCart();
+            ShoppingCart.Clear();
+            if (Mã_SP !=null)
+                for (int i = 0; i < Mã_SP.Length; i++)
+                    if(số_lượng [i] >0)
+                {
+                    var sanpham = db.Sanphams.Find(Mã_SP[i]);
+                    ShoppingCart.Add(new Chitietdonhang
+                    {
+                        Sanpham=sanpham,
+                        Số_lượng =số_lượng[i]
+                    });
+                }
+            Session["ShoppingCart"] = ShoppingCart;
+            return RedirectToAction("Index");
         }
 
         // GET: ShoppingCart/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Chitietdonhang chitietdonhang = db.Chitietdonhangs.Find(id);
-            if (chitietdonhang == null)
-            {
-                return HttpNotFound();
-            }
-            return View(chitietdonhang);
+
+            GetShoppingCart();
+            ShoppingCart.Clear();
+            Session["ShoppingCart"] = ShoppingCart;
+            return RedirectToAction("Index");
         }
 
 
