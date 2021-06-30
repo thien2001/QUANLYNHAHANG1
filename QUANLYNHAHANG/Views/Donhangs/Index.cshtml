@@ -1,0 +1,67 @@
+@model IEnumerable<QUANLYNHAHANG.Models.Donhang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ð?a_ch?_ngý?i_nh?n)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SÐT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Ngày_giao)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Trangthaidonhang.Tr?ng_thái)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ð?a_ch?_ngý?i_nh?n)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SÐT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngày_giao)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Trangthaidonhang.Tr?ng_thái)
+        </td>
+        <td>
+            @foreach (var details in item.Chitietdonhangs)
+                {
+            @details.Sanpham.Tên_món_ãn  <span>x</span>  @details.S?_lý?ng  <br />
+                }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.M?_ÐH }) |
+            @Html.ActionLink("Details", "Details", new { id = item.M?_ÐH }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.M?_ÐH })
+        </td>
+    </tr>
+}
+
+</table>
