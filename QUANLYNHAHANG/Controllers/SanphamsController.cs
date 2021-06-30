@@ -23,6 +23,12 @@ namespace QUANLYNHAHANG.Controllers
             return View(sanphams.ToList());
         }
         [AllowAnonymous]
+        public ActionResult Index2()
+        {
+            var sanphams = db.Sanphams.Include(s => s.Loaisanpham);
+            return View(sanphams.ToList());
+        }
+        [AllowAnonymous]
         public ActionResult Search(String keyword)
         {
             var model = db.Sanphams.ToList();

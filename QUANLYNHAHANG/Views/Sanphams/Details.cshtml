@@ -7,57 +7,58 @@
 <h2>Details</h2>
 
 
-    <h2 style="padding-left: 10px; color: #ff7315;"><a href="@Url.Action("Details", new { Model.Mã_SP })">@Model.Tên_món_ăn</a></h2>
+<h2 style="padding-left: 10px; color: #ff7315;"><a href="@Url.Action("Details", new { Model.Mã_SP })">@Model.Tên_món_ăn</a></h2>
 
-    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+<div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
-        <!--Grid column-->
-        <div class="col-md-3 mb-2" style="margin-right: 10px">
+    <!--Grid column-->
+    <div class="col-md-3 mb-2" style="margin-right: 10px">
 
-            <img src="@Url.Action("Picture", new {Model.Mã_SP })" class="img-fluid">
-
-        </div>
-        <!--Grid column-->
-        <!--Grid column-->
-        <div class="col-md-3 mb-3">
-
-            <!--Content-->
-            <div class="p-4">
-
-                <h3 class="title">
-                    <a href="@Url.Action("Details", new { id = Model.Mã_SP })">
-                        <span class="badge purple mr-1" style="color: #ff7315">@Model.Loaisanpham.Tên_loại_SP</span>
-                    </a>
-                    <a href="@Url.Action("Index2", "SanPhams")">
-                        <span class="badge blue mr-1">New</span>
-                    </a>
-                </h3>
-
-                <p class="lead">
-                    <span class="price">@Model.Giá_tiền.ToString("N")đ</span>
-                </p>
-
-                <p class="lead font-weight-bold">Mô tả</p>
-
-                <p>
-                    @Model.Mô_tả
-                </p>
-
-                <form action="@Url.Action("Create", "ShoppingCart")" method="post">
-                    <input type="hidden" name="Mã_SP" value="@Model.Mã_SP" />
-                    <div class="d-flex justify-content-left">
-                        <!-- Default input -->
-                        <input name="Số_lượng" type="number" value="1" min="1" aria-label="Search" class="form-control" style="width: 70px">
-                        <input type="submit" class="btn btn-primary btn-md my-0 p waves-effect waves-light" value="Add to cart" />
-
-
-                    </div>
-
-                </form>
-            </div>
-            <!--Content-->
-
-        </div>
-        <!--Grid column-->
+        <img src="@Url.Action("Picture", new {Model.Mã_SP })" class="img-fluid">
 
     </div>
+    <!--Grid column-->
+    <!--Grid column-->
+    <div class="col-md-3 mb-3">
+
+        <!--Content-->
+        <div class="p-4">
+
+            <h3 class="title">
+                <a href="@Url.Action("Details", new { id = Model.Mã_SP })">
+                    <span class="badge purple mr-1" style="color: #ff7315">@Model.Loaisanpham.Tên_loại_SP</span>
+                </a>
+                <a href="@Url.Action("Index2", "SanPhams")">
+                    <span class="badge blue mr-1">New</span>
+                </a>
+            </h3>
+
+            <p class="lead">
+                <span class="price">@Model.Giá_tiền.ToString("N")đ</span>
+            </p>
+
+            <p class="lead font-weight-bold">Mô tả</p>
+
+            <p>
+                @Model.Mô_tả
+            </p>
+
+            <form class="d-flex justify-content-left">
+                <!-- Default input -->
+                <input type="number" value="1" min="1" aria-label="Search" class="form-control" style="width: 70px">
+                <button class="btn btn-primary btn-md my-0 p waves-effect waves-light" type="submit" style="background-color: #ff7315; border: none; margin-left: 10px">
+
+
+                    Add to cart
+                    <i class="fa fa-shopping-cart ml-1"></i>
+                </button>
+
+            </form>
+
+        </div>
+        <!--Content-->
+
+    </div>
+    <!--Grid column-->
+
+</div>
