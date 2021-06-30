@@ -375,8 +375,9 @@
     <Content Include="Views\Sanphams\Create.cshtml" />
     <Content Include="Views\Sanphams\Delete.cshtml" />
     <Content Include="Views\Sanphams\Details.cshtml" />
-    <Content Include="Views\Sanphams\Edit.cshtml" />
+    <Content Include="Views\Sanphams\Edit2.cshtml" />
     <Content Include="Views\Sanphams\Index.cshtml" />
+    <Content Include="Views\Sanphams\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
