@@ -337,6 +337,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Sanphams\Index2.cshtml" />
+    <Content Include="Views\Sanphams\Edit.cshtml" />
     <None Include="Views\Shared\Restaurant.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -375,7 +376,7 @@
     <Content Include="Views\Sanphams\Create.cshtml" />
     <Content Include="Views\Sanphams\Delete.cshtml" />
     <Content Include="Views\Sanphams\Details.cshtml" />
-    <Content Include="Views\Sanphams\Edit.cshtml" />
+    <Content Include="Views\Sanphams\Edit2.cshtml" />
     <Content Include="Views\Sanphams\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
