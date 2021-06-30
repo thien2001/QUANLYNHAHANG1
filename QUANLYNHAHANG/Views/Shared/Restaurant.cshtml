@@ -1,9 +1,10 @@
-<!--
+﻿<!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+@using QUANLYNHAHANG.Models
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,6 +75,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </form>
                                 </div>
                             </div>
+
+                            <form action="@Url.Action("Index", "ShoppingCart")" method="post" class="last">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="display" value="1">
+                                <button class="top_transmitv_cart" type="submit" name="submit" value="">
+                                    My Cart
+                                    <span class="fa fa-shopping-cart"></span>
+
+                                    @((Session["ShoppingCart"] as List<Chitietdonhang>)?.Count)
+                                    </a>
+                                </button>
+                            </form>
+
 
                         </div>
                         <div class="clearfix"> </div>
