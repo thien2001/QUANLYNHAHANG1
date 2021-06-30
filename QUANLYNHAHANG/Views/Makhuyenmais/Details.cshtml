@@ -1,0 +1,74 @@
+﻿@model QUANLYNHAHANG.Models.Makhuyenmai
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Makhuyenmai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tên_KM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tên_KM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mức_giảm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mức_giảm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trị_giá_từ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trị_giá_từ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thời_gian_bắt_đầu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thời_gian_bắt_đầu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thời_gian_kết_thúc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thời_gian_kết_thúc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apdungcho.Tên_loại_áp_dụng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apdungcho.Tên_loại_áp_dụng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loaimakhuyenmai.Tên_loại_khuyến_mãi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loaimakhuyenmai.Tên_loại_khuyến_mãi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Mã_khuyến_mãi }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

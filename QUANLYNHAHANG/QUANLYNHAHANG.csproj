@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AspNetRoleUserController.cs" />
     <Compile Include="Controllers\AspNetRolesController.cs" />
     <Compile Include="Controllers\Donhang1Controller.cs" />
+    <Compile Include="Controllers\MakhuyenmaisController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -762,6 +763,11 @@
     <Content Include="Views\Donhang1\Edit.cshtml" />
     <Content Include="Views\Donhang1\Index.cshtml" />
     <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Makhuyenmais\Create.cshtml" />
+    <Content Include="Views\Makhuyenmais\Delete.cshtml" />
+    <Content Include="Views\Makhuyenmais\Details.cshtml" />
+    <Content Include="Views\Makhuyenmais\Edit.cshtml" />
+    <Content Include="Views\Makhuyenmais\Index.cshtml" />
     <None Include="Views\Shared\Restaurant.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
